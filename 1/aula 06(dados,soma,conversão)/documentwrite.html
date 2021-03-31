@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro</title>
+    <style>
+        body{
+            background-color: rgb(161, 99, 185);
+            color: white;
+            font: normal 25pt Arial;
+ }
+ h1
+ {
+     color: lightcoral;
+ }
+ p
+ {
+     color: lightgreen;
+     font: italic;
+
+ }
+    </style>
+    
+
+</head>
+<body>
+    <h1>Olá,Mundo</h1>
+<p>vamos time</p>
+<script>
+    // somar dois numeros que vieram do prompt, como eles saem do prompt , ele vem como string, então
+    // é necesário converter
+    // a função Number(), converte string para numero
+    //a função string() converte number para string
+    var nome  = window.prompt('Digite o seu nome! ')
+   
+    var idade = window.prompt('digite a sua idade ')
+    
+    if(idade > 20){
+        document.write(` então ${nome}, com essa idade(${idade} anos) você já pode beber`)
+    } 
+    
+        document.write(`nessa caso ${nome}, você não poderá comprar bebida`)
+    
+    // aumentar o numero de casas decimais n1.tofixed(numero de casas decimais desejadas)
+    // convet para moedas n1toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})
+</script>
+</body>
+</html>

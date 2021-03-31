@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Tabuada</title>
+    
+    <style>
+        body{
+    background: rgb(103, 62, 238);
+    font: normal 15pt Arial;
+
+
+}
+header{
+    color: white;
+    text-align: center;
+
+}
+section{
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.472);
+}
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Tabuada</h1>
+
+    </header>
+    <section>
+<div id="dados">
+<p>Número: <input type="number" name="txtc" id="txtc"> <input type="button" value="Gerar Tabuada" onclick="tabuada()"> </p>
+</div>
+<div id="res">
+    <select name="tabuada" id="seltab" size="10"> <option>Digite um número aqui em cima:</option></select>
+
+</div>
+    </section>
+    <footer>
+<p>&copy; JoaoScript a maquina da programação</p>
+    </footer>
+    <script>
+        function tabuada(){
+    let i = document.getElementById('txtc')
+    let tab = document.getElementById('seltab')
+    let j = 10
+
+    if( i.value == 0 || i.value.length == 0){
+        alert('[ERRO]')
+    }
+    else { 
+        tab.innerHTML = ''
+        
+        for (let c = 0; c <= 10; c++ ){
+            let k = Number(i.value)
+            let g = k*c
+            let item = document.createElement('option')
+            item.text = `${c} x ${k} = ${g}`
+            tab.appendChild(item)
+        
+        }
+        
+    }
+}
+    </script>
+    <script></script>
+</body>
+</html>

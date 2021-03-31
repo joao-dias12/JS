@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMP</title>
+    <style>
+        body{
+    background: rgb(7, 133, 74);
+    font: normal 15pt Arial;
+
+
+}
+header{
+    color: white;
+    text-align: center;
+
+}
+section{
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.472);
+}
+select#flista{
+width: 150px;
+}
+footer{
+    color: white;
+    text-align: center;
+    font-style: italic;
+
+}
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1> Ministério da Mafia e Pirataria</h1>
+<img src="ss.jpeg" alt="" id="foto">
+    </header>
+    <section>
+<div id="comeco">
+    Quantas vezes você quer transar esse fds: 
+    <input type="number" name="fnum" id="fnum"> 
+    <input type="button" value="Isso tudo safada?" onclick="safada()">
+    <br> <br><select name="flista" id="flista" size="10"></select> </br>
+
+</div>
+<div id="res">
+    <img id="img" src="" alt="">
+
+</div>
+    </section>
+    <footer>
+<p>&copy; MMP LTDA</p>
+    </footer>
+    <script > 
+    let num = document.querySelector('input#fnum')
+let lista = document.querySelector('input#flista')
+let res = document.querySelector('div#res')
+let img = document.getElementById('img')
+let valores = []
+let foto = document.getElementById('foto')
+let comeco = document.getElementById('comeco')
+
+function safada(){
+    if (num.value == 0) {
+        alert('Ah qual foi, não vamos dar nem umazinha ?')
+        
+        foto.src = 'questionando1.png'
+        document.body.style.background = 'red'
+        comeco.innerHTML = 'Que decepção'
+    } else {
+        if (num.value < 5 ){
+            comeco.innerHTML = ' Agora estamos começando a conversar'
+            foto.src = 'sorrindo.jpg'
+        }
+         else if( num.value < 13  ){
+            comeco.innerHTML = ' Que isso Giulia, assim eu fico com aquele olhar de quando voce me chama de João Dias'
+            foto.src = 'olharsedu.png'
+
+         
+        }
+        else   {  
+            comeco.innerHTML = ' Ain eu vou morrer de Gozar'
+            foto.src = 'Gozando1.png'
+          
+        }
+
+    }
+}
+    </script>
+</body>
+</html>
