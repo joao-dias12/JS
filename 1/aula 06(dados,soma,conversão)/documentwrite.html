@@ -1,49 +1,145 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="pt-br">
+{%  load crispy_forms_tags %}
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeiro</title>
+    <title>Stockbot</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         body{
-            background-color: rgb(161, 99, 185);
-            color: white;
-            font: normal 25pt Arial;
- }
- h1
- {
-     color: lightcoral;
- }
- p
- {
-     color: lightgreen;
-     font: italic;
-
- }
+            padding-top: 0px;
+            background: #26D07C;
+            padding: 0px;
+            align-items: center;
+        }
+        .card{
+            box-shadow: 3px 6px 8px 3px rgba(100,100,100,100);
+            border-radius: 10px;
+            padding-top: 0px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .header{
+            background: #373A36;
+            justify-content: left;
+            align-items: center;
+            padding: 0px;
+            flex-wrap: wrap;
+        }
+        a{
+            text-decoration: none;
+        }
+        .img{
+            height: 50px;
+        }
     </style>
-    
-
 </head>
 <body>
-    <h1>Olá,Mundo</h1>
-<p>vamos time</p>
-<script>
-    // somar dois numeros que vieram do prompt, como eles saem do prompt , ele vem como string, então
-    // é necesário converter
-    // a função Number(), converte string para numero
-    //a função string() converte number para string
-    var nome  = window.prompt('Digite o seu nome! ')
-   
-    var idade = window.prompt('digite a sua idade ')
-    
-    if(idade > 20){
-        document.write(` então ${nome}, com essa idade(${idade} anos) você já pode beber`)
-    } 
-    
-        document.write(`nessa caso ${nome}, você não poderá comprar bebida`)
-    
-    // aumentar o numero de casas decimais n1.tofixed(numero de casas decimais desejadas)
-    // convet para moedas n1toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})
-</script>
+    <header class="header">
+        <a href="{% static 'stocksrank/assetss/images/logo_branco.png'%}"><img class="img" src="{% static 'stocksrank/assets/images/logo_white.png'%}"> </a>
+
+    </header>
+
+    <div class="container" >
+      <div >
+          <div class="col-10" >
+              <div class="card">
+                <div class="card-body">
+                  <h1>Atualizações salvas</h1>
+
+                </div>
+              </div>
+          </div>
+      </div>
+
+    </div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+{% load static %}
+<!DOCTYPE html>
+{%  load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stockbot</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body{
+            padding-top: 0px;
+            background: #26D07C;
+            padding: 0px;
+            align-items: center;
+        }
+        .card{
+            box-shadow: 3px 6px 8px 3px rgba(100,100,100,100);
+            border-radius: 10px;
+            padding-top: 0px;
+            padding: 0px;
+            margin: 0px;
+        }
+        .header{
+            background: #373A36;
+            justify-content: left;
+            align-items: center;
+            padding: 0px;
+            flex-wrap: wrap;
+        }
+        a{
+            text-decoration: none;
+        }
+        .img{
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="{% static 'stocksrank/assetss/images/logo_branco.png'%}"><img class="img" src="{% static 'stocksrank/assets/images/logo_white.png'%}"> </a>
+
+    </header>
+
+    <div class="container" >
+      <div >
+          <div class="col-10" >
+              <div class="card">
+                <div class="card-body">
+                  <h1>Preferências do usuário</h1>
+                  <form action="" method="post">
+                      {% csrf_token %}
+                      {{ form|crispy }}
+                      <div class="form-group">
+                          <label for="nome">Nome:</label>
+                          <input class="form-control"  type="text" name="nome" id="nome" placeholder="Digite o seu nome....">
+                      </div>
+                      <div class="form-group">
+                          <label for="email">E-mail:</label>
+                          <input class="form-control" type="text" name="email" id="email" placeholder="Digite o seu email">
+                      </div>
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-success">Atualizar</button>
+                      </div>
+                  </form>
+                </div>
+              </div>
+          </div>
+      </div>
+
+    </div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
